@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.dao.FileDao">
+
+    <select id="queryAllFile" resultType="com.my.vo.File">
+        SELECT * FROM file
+    </select>
+
+    <insert id="insertFile">
+        insert into file
+            VALUE(#{FileId},#{FileTitle},#{FromUserName},#{ToUsername},#{FileStatus})
+    </insert>
+
+    <update id="updateBook">
+        update file set FileTitle=#{FileTitle},FromUserName =
+            #{FromUserName},ToUsername = #{ToUsername},FileStatus = #{FileStatus}
+        where FileId = #{FileId}
+    </update>
+    <select id="queryFileById" resultType="com.my.vo.File">
+        select * from file where FileId = #{FileId}
+    </select>
+
+    <delete id="deleteFileById">
+        delete from file where FileId = #{FileId}
+    </delete>
+</mapper>
