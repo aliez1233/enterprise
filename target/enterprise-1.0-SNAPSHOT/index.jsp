@@ -12,5 +12,6 @@
 </head>
 <body>
 hello world!
+<jsp:forward page="/WEB-INF/jsp/login.jsp"></jsp:forward>
 </body>
 </html>
