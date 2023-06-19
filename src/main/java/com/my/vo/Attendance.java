@@ -1,6 +1,7 @@
 package com.my.vo;
 
 public class Attendance {
+    private Integer AttendanceId;
     private Integer EmployeeId;
     private String EmployeeName;
     private String Appear;
@@ -8,6 +9,14 @@ public class Attendance {
     private String LateEarlyLeave;
     private String AbsentWork;
     private String Overtime;
+
+    public Integer getAttendanceId() {
+        return AttendanceId;
+    }
+
+    public void setAttendanceId(Integer attendanceId) {
+        AttendanceId = attendanceId;
+    }
 
     public Integer getEmployeeId() {
         return EmployeeId;
@@ -68,20 +77,11 @@ public class Attendance {
     public Attendance() {
     }
 
-    public Attendance(Integer employeeId, String employeeName, String appear, String leave, String lateEarlyLeave, String absentWork, String overtime) {
-        EmployeeId = employeeId;
-        EmployeeName = employeeName;
-        Appear = appear;
-        Leave = leave;
-        LateEarlyLeave = lateEarlyLeave;
-        AbsentWork = absentWork;
-        Overtime = overtime;
-    }
-
     @Override
     public String toString() {
         return "Attendance{" +
-                "EmployeeId=" + EmployeeId +
+                "AttendanceId=" + AttendanceId +
+                ", EmployeeId=" + EmployeeId +
                 ", EmployeeName='" + EmployeeName + '\'' +
                 ", Appear='" + Appear + '\'' +
                 ", Leave='" + Leave + '\'' +
@@ -89,5 +89,16 @@ public class Attendance {
                 ", AbsentWork='" + AbsentWork + '\'' +
                 ", Overtime='" + Overtime + '\'' +
                 '}';
+    }
+
+    public Attendance(Integer attendanceId, Integer employeeId, String employeeName, String appear, String leave, String lateEarlyLeave, String absentWork, String overtime) {
+        AttendanceId = attendanceId;
+        EmployeeId = employeeId;
+        EmployeeName = employeeName;
+        Appear = appear;
+        Leave = leave;
+        LateEarlyLeave = lateEarlyLeave;
+        AbsentWork = absentWork;
+        Overtime = overtime;
     }
 }

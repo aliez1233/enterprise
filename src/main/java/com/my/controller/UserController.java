@@ -21,7 +21,7 @@ public class UserController {
             session.setAttribute("USER_SESSION",user);
             return "index.jsp";
         }
-        model.addAttribute("msg","账号或密码错误，请重新输入！");
+        model.addAttribute("msg","用户名或密码错误，请重新输入！");
         return "login.jsp";
     }
 }

@@ -9,7 +9,7 @@ public class FileTest {
     public static void main(String[] args) {
         ApplicationContext con=new ClassPathXmlApplicationContext("applicationContext.xml");
         FileDao ssm=con.getBean(FileDao.class);
-        System.out.println(ssm.queryFileById(2));
+        System.out.println(ssm.queryFileById(1));
     }
 
 }

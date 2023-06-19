@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.dao.AttendanceDao">
+    <select id="queryAllAttendance" resultType="com.my.dao.AttendanceDao">
+        SELECT *FROM attendance
+    </select>
+    <insert id="insertAttendance">
+        insert into attendance
+        VALUES(#{AttendanceId},#{EmployeeId},#{EmployeeName},#{Appeard},#{Leave},#{LateEarlyLeave},#{AbsentWork},#{Overtime})
+    </insert>
+    <update id="updateAttendance">
+        update attendance set EmployeeId=#{EmployeeId},EmployeeName=#{EmployeeName},Appeard=#{Appeard},Leave=#{Leave},LateEarlyLeave=#{LateEarlyLeave},AbsentWork=#{AbsentWork},Overtime=#{Overtime},
+    </update>
+</mapper>

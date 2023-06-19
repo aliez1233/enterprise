@@ -1,12 +1,12 @@
-package com.my.dao;
+package com.my.service;
 
 import com.my.vo.Attendance;
 
 
 import java.util.List;
 
-public interface AttendanceDao {
-    List<Attendance>queryAllAttendance();
+public interface AttendanceService {
+    List<Attendance> queryAllAttendance();
     int insertAttendance(Attendance attendance);
     int updateAttendance(Attendance attendance);
     Attendance queryAttendanceById(int aid);
