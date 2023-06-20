@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class AttendanceServiceImpl{
+public class AttendanceServiceImpl implements AttendanceService{
     @Autowired
     AttendanceDao attendanceDao;
     public List<Attendance> queryAllAttendance(){
@@ -30,7 +30,7 @@ public class AttendanceServiceImpl{
         int i=attendanceDao.deleteAttendanceById(aid);
         return i;
     }
-   public Attendance queryAttendance(int aid){
+   public Attendance queryAttendanceById(int aid){
         return attendanceDao.queryAttendanceById(aid);
    }
 }

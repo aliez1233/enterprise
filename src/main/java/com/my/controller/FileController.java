@@ -1,5 +1,6 @@
 package com.my.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.my.service.FileService;
 import com.my.vo.File;
@@ -20,6 +21,7 @@ public class FileController {
 
     @RequestMapping("/allFile")
     public String queryAllFile(@RequestParam(name = "pn",defaultValue = "1") Integer pn, Model model) {
+        PageHelper.startPage(pn, 10);
         List<File> files=fileService.queryAllFile();
         PageInfo pageInfo= new PageInfo(files);
         model.addAttribute("pageInfo",pageInfo);
@@ -27,6 +29,7 @@ public class FileController {
     }
     @RequestMapping("/toAddFile")
     public String toAddFile(){
+
         return "redirect:addFile";
     }
     @RequestMapping("/addFile")

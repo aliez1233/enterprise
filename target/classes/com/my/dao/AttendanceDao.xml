@@ -11,6 +11,15 @@
         VALUES(#{AttendanceId},#{EmployeeId},#{EmployeeName},#{Appeard},#{Leave},#{LateEarlyLeave},#{AbsentWork},#{Overtime})
     </insert>
     <update id="updateAttendance">
-        update attendance set EmployeeId=#{EmployeeId},EmployeeName=#{EmployeeName},Appeard=#{Appeard},Leave=#{Leave},LateEarlyLeave=#{LateEarlyLeave},AbsentWork=#{AbsentWork},Overtime=#{Overtime},
+        update attendance set EmployeeId=#{EmployeeId},EmployeeName=#{EmployeeName},
+                              Appeard=#{Appeard},Leave=#{Leave},
+                              LateEarlyLeave=#{LateEarlyLeave},
+                              AbsentWork=#{AbsentWork},Overtime=#{Overtime}
     </update>
+    <select id="queryAttendanceById" resultType="com.my.vo.Attendance">
+        select *from attendance where AttendanceId=#{AttendanceId}
+    </select>
+    <select id="deleteAttendanceById">
+        select from attendance where AttendanceId=#{AttendanceId}
+    </select>
 </mapper>

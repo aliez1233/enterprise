@@ -46,7 +46,7 @@
             <td>${file.FileStatus}</td>
 
             <td><a href="${pageContext.request.contextPath}/file/toUpdateFile?id=${file.getFileId()}">更改</a>|
-              <a href="${pageContext.request.contextPath}/book/delete/${file.getFileId()}">删除</a></td>
+              <a href="${pageContext.request.contextPath}/file/delete/${file.getFileId()}">删除</a></td>
           </tr>
         </c:forEach>
         </tbody>

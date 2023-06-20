@@ -10,12 +10,12 @@
 
     <insert id="insertFile">
         insert into file
-            VALUE(#{FileId},#{FileTitle},#{FromUserName},#{ToUsername},#{FileStatus})
+            VALUE(#{FileId},#{FileTitle},#{FromUserName},#{ToUserName},#{FileStatus})
     </insert>
 
     <update id="updateBook">
         update file set FileTitle=#{FileTitle},FromUserName =
-            #{FromUserName},ToUsername = #{ToUsername},FileStatus = #{FileStatus}
+            #{FromUserName},ToUserName = #{ToUserName},FileStatus = #{FileStatus}
         where FileId = #{FileId}
     </update>
     <select id="queryFileById" resultType="com.my.vo.File">
